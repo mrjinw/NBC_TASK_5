@@ -15,20 +15,20 @@ public:
 protected:
     virtual void BeginPlay() override;
 
-protected:
-    int32 StepCount;
-    int32 MaxSteps;
-
-public:
-    // [과제 2] 이동 함수 (Distance를 인자로 받음)
+private:
+    // 이동
     void MoveActor(float Distance);
 
-    // [과제 2] 회전 함수 (Angle을 인자로 받음)
+    // 회전
     void TurnActor(float Angle);
 
-    // [과제 2] 10회 랜덤 실행 로직
+    // 반복 실행
     void RunRandomProcess();
 
-public:
-    virtual void Tick(float DeltaTime) override;
+private:
+    // 타이머
+    FTimerHandle TimerHandle;
+
+    int32 StepCount;
+    int32 MaxSteps;
 };
